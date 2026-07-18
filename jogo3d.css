@@ -1,0 +1,370 @@
+/* cartomante/jogo3d.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  --primary: #9b59b6;
+  --primary-dark: #8e44ad;
+  --text-light: #f5f6fa;
+  --bg-overlay: rgba(15, 10, 20, 0.85);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #050510;
+  color: var(--text-light);
+  overflow: hidden; /* Evitar scroll */
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#ui-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none; /* Deixa os cliques passarem pro 3D */
+  display: flex;
+  flex-direction: column;
+}
+
+.game-header {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.game-header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(155, 89, 182, 0.5);
+}
+
+.btn-back {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+.btn-back:hover {
+  color: var(--primary);
+}
+
+.panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(155, 89, 182, 0.3);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.panel.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.panel h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.panel p {
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #dcdde1;
+}
+
+.btn-action {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(155, 89, 182, 0.6);
+}
+
+.pulse {
+  animation: pulseAnim 2s infinite;
+}
+
+@keyframes pulseAnim {
+  0% { box-shadow: 0 0 0 0 rgba(155, 89, 182, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(155, 89, 182, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(155, 89, 182, 0); }
+}
+
+/* Loading Spinner */
+#loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 16, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-spinner.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.spinner-box {
+  text-align: center;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(155, 89, 182, 0.2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner-text {
+  color: var(--text-light);
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+/* Reading Panel - BEM PEQUENO E DISCRETO */
+#reading-panel {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  top: auto;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px;
+  background: rgba(15, 10, 20, 0.5);
+  max-width: 600px;
+  width: auto;
+  border-radius: 10px;
+}
+
+#reading-panel.visible {
+  transform: translate(-50%, 0);
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translate(-50%, 20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translate(-50%, 0); 
+  }
+}
+
+.card-reading {
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 6px;
+  border-radius: 6px;
+  border-left: 2px solid var(--primary);
+  display: none;
+  min-width: 100px;
+  max-width: 140px;
+}
+
+.card-reading.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reading-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  margin: 2px 0 4px 0;
+}
+
+.card-desc {
+  font-size: 0.7rem;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.card-thumb {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid var(--primary);
+  display: block;
+  margin: 0 auto 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effects para deck */
+#canvas-container.clickable {
+  cursor: pointer;
+}
+
+#canvas-container.clickable:active {
+  cursor: grabbing;
+}
+
+/* Spread Menu Grid */
+.spread-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.spread-option {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(155, 89, 182, 0.3);
+  border-radius: 12px;
+  padding: 25px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.spread-option:hover {
+  background: rgba(155, 89, 182, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
+}
+
+.spread-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.spread-option h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.spread-option p {
+  color: var(--primary);
+  font-weight: 600;
+  margin: 5px 0;
+}
+
+.spread-desc {
+  font-size: 0.85rem;
+  color: #dcdde1;
+  display: block;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .game-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .panel {
+    padding: 25px;
+    width: 95%;
+  }
+  
+  .panel h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card-reading {
+    padding: 12px 15px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-desc {
+    font-size: 0.85rem;
+  }
+  
+  #reading-panel {
+    bottom: 10px;
+    max-width: 95%;
+  }
+}
