@@ -1,61 +1,361 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baralho Cigano - Descubra seu Destino</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      background: white;
-      border-radius: 20px;
-      padding: 60px 40px;
-      max-width: 800px;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      color: #764ba2;
-    }
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 30px;
-    }
-    .btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 15px 40px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1.1em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.3s;
-    }
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-  </style>
+  <meta name="description"
+    content="O Baralho Cigano Sem Mistérios - Guia Definitivo. Aprenda a ler as 36 cartas Lenormand com este e-book completo. Origem, significados e métodos de tiragem.">
+  <meta name="keywords"
+    content="baralho cigano, e-book, lenormand, aprender baralho cigano, guia baralho cigano, cartomancia, oráculo">
+  <meta name="author" content="Templo de Stella Editora">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="O Baralho Cigano Sem Mistérios - E-book Definitivo">
+  <meta property="og:description"
+    content="Domine as 36 cartas Lenormand com significados completos, métodos de tiragem e ética profissional. Mais de 200 páginas de conhecimento.">
+  <meta property="og:image" content="images/hero.png">
+
+  <title>O Baralho Cigano Sem Mistérios - E-book Oficial</title>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <h1>🔮 Baralho Cigano</h1>
-    <p>Descubra os segredos do destino através das cartas sagradas.<br>Tiragens precisas e consultas personalizadas.</p>
-    <a href="https://wa.me/5511999999999" class="btn">Agende sua Consulta</a>
-  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-book-open"></i>
+        Baralho Cigano sem Mistérios
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#conteudo">Conteúdo</a></li>
+          <li><a href="#comprar">Comprar</a></li>
+          <li><a href="../ebook/index.html" target="_blank">Amostra Grátis</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#comprar" class="btn-consult">Comprar Agora</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Alternar menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge">
+            <i class="fa-solid fa-star"></i> Mais de 200 páginas de conhecimento
+          </span>
+          <h1>Domine o <span>Baralho Cigano</span> de Forma Definitiva</h1>
+          <p>
+            Aprenda a origem histórica, o significado completo das 36 cartas Lenormand, os métodos de tiragem — da Carta
+            Única à Mesa Real — e os princípios éticos para se tornar um leitor de confiança.
+          </p>
+          <div class="btn-group">
+            <a href="#comprar" class="btn btn-primary">
+              <i class="fa-solid fa-cart-shopping"></i> Comprar Agora
+            </a>
+            <a href="../ebook/index.html" class="btn btn-secondary" target="_blank">
+              <i class="fa-solid fa-book-open"></i> Ler Amostra Grátis
+            </a>
+            <a href="jogo3d.html" class="btn btn-secondary" style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; border: none; animation: pulseAnim 2s infinite;">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Tiragem Virtual 3D
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-img-box">
+          <div class="hero-circle-glow"></div>
+          <div class="hero-book-mockup">
+            <img src="../ebook/capa/9937e80d-8d02-4562-beb7-a92c6a569c35.jpg"
+              alt="Capa do E-book Baralho Cigano Sem Mistérios">
+            <span class="hero-book-badge">E-book</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section id="beneficios" class="benefits">
+      <div class="container">
+        <div class="section-header">
+          <h2>Por que este e-book?</h2>
+          <p>Um guia completo e prático para quem quer aprender o Baralho Cigano do zero ou aprimorar suas leituras.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-history"></i>
+            </div>
+            <h3>Origens Históricas</h3>
+            <p>Descubra a verdadeira história do Petit Lenormand, desde o Jogo da Esperança alemão até a consagração
+              pelo povo cigano.</p>
+          </div>
+
+          <div class="benefit-card featured">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-cards-blank"></i>
+            </div>
+            <h3>36 Cartas Explicadas</h3>
+            <p>Cada uma das 36 cartas com palavras-chave, simbolismo, interpretações práticas e dicas de leitura em
+              combinações.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-table-cells-large"></i>
+            </div>
+            <h3>Métodos de Tiragem</h3>
+            <p>Da Carta Única à Mesa Real (Grande Tableau), com exemplos reais de combinações e técnicas de
+              espelhamento.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3>Ética Profissional</h3>
+            <p>Princípios fundamentais para atender consulentes com responsabilidade, empatia e confidencialidade.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3>Linguagem Acessível</h3>
+            <p>Conteúdo didático escrito em português claro, ideal tanto para iniciantes quanto para leitores que
+              desejam aprofundar seus conhecimentos.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fa-solid fa-infinity"></i>
+            </div>
+            <h3>Acesso Vitalício</h3>
+            <p>Pagamento único e acesso vitalício ao conteúdo. Leia no conforto do seu celular, tablet ou computador.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT PREVIEW SECTION -->
+    <section id="conteudo" class="content-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2>O que você vai aprender</h2>
+          <p>10 capítulos completos que vão transformar sua relação com o Baralho Cigano.</p>
+        </div>
+
+        <div class="chapters-grid">
+          <div class="chapter-card">
+            <span class="chapter-num">01</span>
+            <h4>Origens Históricas e Mitos</h4>
+            <p>A trajetória do Baralho Cigano, Marie Lenormand, o Jogo da Esperança e a apropriação cigana.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">02</span>
+            <h4>Estrutura e Consagração</h4>
+            <p>Como o deck é organizado, limpeza energética, consagração e cuidados com suas cartas.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">03</span>
+            <h4>Cartas 1 a 9</h4>
+            <p>Do Mensageiro ao Buquê: significados, palavras-chave e interpretações para cada arcano.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">04</span>
+            <h4>Cartas 10 a 18</h4>
+            <p>Da Foice ao Cão: a segunda sequência de cartas e suas mensagens práticas.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">05</span>
+            <h4>Cartas 19 a 27</h4>
+            <p>Da Torre à Carta: relações sociais, caminhos pessoais e documentos importantes.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">06</span>
+            <h4>Cartas 28 a 36</h4>
+            <p>Do Cigano à Cruz: personagens, resoluções espirituais e os desafios cármicos.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">07</span>
+            <h4>Combinações e Relações</h4>
+            <p>Substantivo + Adjetivo, polaridades, cartas positivas, negativas e neutras.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">08</span>
+            <h4>Métodos de Tiragem</h4>
+            <p>Carta Única, métodos de 3 cartas e técnicas para leituras rápidas e objetivas.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">09</span>
+            <h4>A Mesa Real</h4>
+            <p>O Grande Tableau completo: disposições 8x4 e 9x4, casas de correspondência e espelhamento.</p>
+          </div>
+          <div class="chapter-card">
+            <span class="chapter-num">10</span>
+            <h4>Ética e Prática Profissional</h4>
+            <p>Confidencialidade, livre-arbítrio, empatia e os limites da leitura oracular.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUY SECTION -->
+    <section id="comprar" class="buy-section">
+      <div class="container">
+        <div class="buy-grid">
+          <div class="buy-info">
+            <span class="buy-badge">
+              <i class="fa-solid fa-star"></i> Oferta Especial de Lançamento
+            </span>
+            <h2>Garanta seu acesso agora</h2>
+            <p>Pagamento único. Acesso vitalício ao conteúdo completo do e-book, incluindo atualizações futuras.</p>
+
+            <ul class="buy-checklist">
+              <li><i class="fa-solid fa-check"></i> Mais de 200 páginas de conteúdo</li>
+              <li><i class="fa-solid fa-check"></i> 36 cartas explicadas em detalhes</li>
+              <li><i class="fa-solid fa-check"></i> Métodos de tiragem do básico ao avançado</li>
+              <li><i class="fa-solid fa-check"></i> Acesso vitalício com atualizações</li>
+              <li><i class="fa-solid fa-check"></i> Leitura online em qualquer dispositivo</li>
+              <li><i class="fa-solid fa-check"></i> Suporte via WhatsApp para dúvidas</li>
+            </ul>
+          </div>
+
+          <div class="buy-card">
+            <div class="buy-card-header">
+              <h3>E-book Completo</h3>
+              <p>O Baralho Cigano Sem Mistérios</p>
+            </div>
+
+            <div class="buy-price">
+              <span class="buy-price-old">R$ 67,90</span>
+              <span class="buy-price-current">R$ 37,90</span>
+              <span class="buy-price-label">à vista</span>
+            </div>
+
+            <p class="buy-price-info">Pagamento único — Acesso vitalício</p>
+
+            <ul class="buy-features">
+              <li><i class="fa-solid fa-check-circle"></i> 10 capítulos completos</li>
+              <li><i class="fa-solid fa-check-circle"></i> Significado das 36 cartas</li>
+              <li><i class="fa-solid fa-check-circle"></i> Métodos de tiragem</li>
+              <li><i class="fa-solid fa-check-circle"></i> Mesa Real (Grande Tableau)</li>
+              <li><i class="fa-solid fa-check-circle"></i> Ética profissional</li>
+              <li><i class="fa-solid fa-check-circle"></i> Leitor online interativo</li>
+            </ul>
+
+            <a href="https://wa.me/5511999998888?text=Olá! Quero adquirir o e-book O Baralho Cigano Sem Mistérios por R\$ 37,90. Como faço o pagamento?"
+              class="btn btn-primary buy-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Comprar Agora via WhatsApp
+            </a>
+
+            <div class="buy-guarantee">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Atendimento personalizado via WhatsApp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE SECTION -->
+    <section id="amostra" class="sample-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quer conhecer antes de comprar?</h2>
+          <p>Navegue pelos 10 capítulos do e-book no nosso leitor interativo online. Veja o sumário completo e leia
+            trechos de cada capítulo gratuitamente.</p>
+        </div>
+
+        <div class="sample-cta">
+          <div class="sample-mockup">
+            <i class="fa-solid fa-book-open-reader"></i>
+          </div>
+          <div class="sample-content">
+            <h3>Leitor Online Interativo</h3>
+            <p>O e-book é acessado diretamente pelo navegador — sem precisar baixar nada. Você pode ajustar o zoom,
+              alternar para o modo noturno, buscar por palavras-chave e navegar pelos capítulos como em um livro físico.
+            </p>
+            <div class="sample-features">
+              <span><i class="fa-solid fa-search"></i> Busca ativa</span>
+              <span><i class="fa-solid fa-moon"></i> Modo noturno</span>
+              <span><i class="fa-solid fa-maximize"></i> Zoom ajustável</span>
+              <span><i class="fa-solid fa-cards-blank"></i> Imagens das 36 cartas</span>
+            </div>
+            <a href="../ebook/index.html" class="btn btn-primary" target="_blank">
+              <i class="fa-solid fa-book-open"></i> Explorar Amostra Grátis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-book-open"></i>
+          Baralho Cigano sem Mistérios
+        </a>
+        <p>O guia definitivo para aprender o Baralho Cigano (Petit Lenormand) com profundidade, clareza e
+          responsabilidade.</p>
+        <div class="social-links">
+          <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Navegação</h3>
+        <ul class="footer-links">
+          <li><a href="#">Início</a></li>
+          <li><a href="#beneficios">Benefícios</a></li>
+          <li><a href="#conteudo">Conteúdo</a></li>
+          <li><a href="#comprar">Comprar</a></li>
+          <li><a href="../ebook/index.html" target="_blank">Amostra Grátis</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contato</h3>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/5511999998888" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          </li>
+          <li><a href="mailto:contato@templodestella.com"><i class="fa-solid fa-envelope"></i> E-mail</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Templo de Stella Editora. Todos os direitos reservados.</p>
+      <p>Feito para espalhar o conhecimento do Baralho Cigano.</p>
+    </div>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="app.js"></script>
 </body>
+
 </html>
