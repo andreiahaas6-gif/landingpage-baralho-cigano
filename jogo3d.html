@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baralho Cigano 3D - Tiragem de Cartas</title>
+  <link rel="stylesheet" href="jogo3d.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="canvas-container"></div>
+  
+  <div id="ui-layer">
+    <header class="game-header">
+      <a href="../index.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i>
+        <span>Voltar</span>
+      </a>
+      <h1>TIRAGEM DE 3 CARTAS</h1>
+      <div></div>
+    </header>
+
+    <!-- Menu de Seleção de Tiragem -->
+    <div id="spread-menu" class="panel visible">
+      <h2>Escolha a Tiragem</h2>
+      <p style="margin-bottom: 25px; color: #dcdde1;">Selecione o método de leitura desejado</p>
+      
+      <div class="spread-grid">
+        <button class="spread-option" data-spread="single">
+          <div class="spread-icon">🎴</div>
+          <h3>Carta Única</h3>
+          <p>1 carta</p>
+          <span class="spread-desc">Conselho do dia, pergunta simples</span>
+        </button>
+        
+        <button class="spread-option" data-spread="pastPresentFuture">
+          <div class="spread-icon">✨</div>
+          <h3>3 Cartas</h3>
+          <p>3 cartas</p>
+          <span class="spread-desc">Passado, Presente, Futuro</span>
+        </button>
+        
+        <button class="spread-option" data-spread="cross">
+          <div class="spread-icon">✝️</div>
+          <h3>Cruz Simples</h3>
+          <p>4 cartas</p>
+          <span class="spread-desc">Situação, Resultado, Conselho, Obstáculo</span>
+        </button>
+        
+        <button class="spread-option" data-spread="gypsy">
+          <div class="spread-icon">🔮</div>
+          <h3>Método do Cigano</h3>
+          <p>5 cartas</p>
+          <span class="spread-desc">Leitura tradicional cigana</span>
+        </button>
+        
+        <button class="spread-option" data-spread="horseshoe">
+          <div class="spread-icon">🐎</div>
+          <h3>Ferradura</h3>
+          <p>7 cartas</p>
+          <span class="spread-desc">Passado ao Futuro</span>
+        </button>
+        
+        <button class="spread-option" data-spread="tableau">
+          <div class="spread-icon">🌟</div>
+          <h3>Grande Tableau</h3>
+          <p>36 cartas</p>
+          <span class="spread-desc">Leitura completa</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Painel de Leitura -->
+    <div id="reading-panel">
+      <div class="card-reading" id="reading-past">
+        <img class="card-thumb" id="thumb-past" src="" alt="">
+        <div class="reading-label">PASSADO</div>
+        <div class="card-title" id="title-past">...</div>
+        <div class="card-desc" id="desc-past">Aguardando carta...</div>
+      </div>
+      <div class="card-reading" id="reading-present">
+        <img class="card-thumb" id="thumb-present" src="" alt="">
+        <div class="reading-label">PRESENTE</div>
+        <div class="card-title" id="title-present">...</div>
+        <div class="card-desc" id="desc-present">Aguardando carta...</div>
+      </div>
+      <div class="card-reading" id="reading-future">
+        <img class="card-thumb" id="thumb-future" src="" alt="">
+        <div class="reading-label">FUTURO</div>
+        <div class="card-title" id="title-future">...</div>
+        <div class="card-desc" id="desc-future">Aguardando carta...</div>
+      </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner">
+      <div class="spinner-box">
+        <div class="spinner"></div>
+        <div class="spinner-text">CARREGANDO...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="js/jogo3d.js"></script>
+</body>
+</html>
